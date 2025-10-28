@@ -1,0 +1,54 @@
+Content-Type: multipart/alternative;
+ boundary="===============7468052165426605374=="
+MIME-Version: 1.0
+Subject: =?utf-8?q?Activaci=C3=B3n_de_perfil?=
+From: test@example.com
+To: miguelangel18@gmail.com
+Date: Mon, 27 Oct 2025 23:34:16 -0000
+Message-ID: 
+ <176160805600.39531.15993436213106663421@MacBook-Pro-de-Jose-Manuel.local>
+
+--===============7468052165426605374==
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+
+
+
+Para activar tu perfil, por favor sigue este enlace:
+
+http://127.0.0.1:8000/accounts/activate/JS4rxh9LxA2cStfDwy0i/
+
+--===============7468052165426605374==
+Content-Type: text/html; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Activación de perfil</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+
+<body>
+
+<p>
+    Para activar tu perfil, por favor sigue este enlace:
+</p>
+
+<p>
+    <a href="http://127.0.0.1:8000/accounts/activate/JS4rxh9LxA2cStfDwy0i/">http://127.0.0.1:8000/accounts/activate/JS4rxh9LxA2cStfDwy0i/</a>
+</p>
+
+</body>
+
+</html>
+
+--===============7468052165426605374==--
+
+-------------------------------------------------------------------------------

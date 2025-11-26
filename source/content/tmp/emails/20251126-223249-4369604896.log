@@ -1,0 +1,54 @@
+Content-Type: multipart/alternative;
+ boundary="===============8621648083791524539=="
+MIME-Version: 1.0
+Subject: =?utf-8?q?Activaci=C3=B3n_de_perfil?=
+From: test@example.com
+To: william.ugd@gmail.com
+Date: Wed, 26 Nov 2025 22:32:49 -0000
+Message-ID: 
+ <176419636946.2061.14046389111953289379@1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.ip6.arpa>
+
+--===============8621648083791524539==
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+
+
+
+Para activar tu perfil, por favor sigue este enlace:
+
+http://127.0.0.1:8000/accounts/activate/qoWt9bd5irSUY0QZmiTe/
+
+--===============8621648083791524539==
+Content-Type: text/html; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Activación de perfil</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+
+<body>
+
+<p>
+    Para activar tu perfil, por favor sigue este enlace:
+</p>
+
+<p>
+    <a href="http://127.0.0.1:8000/accounts/activate/qoWt9bd5irSUY0QZmiTe/">http://127.0.0.1:8000/accounts/activate/qoWt9bd5irSUY0QZmiTe/</a>
+</p>
+
+</body>
+
+</html>
+
+--===============8621648083791524539==--
+
+-------------------------------------------------------------------------------

@@ -49,5 +49,8 @@ urlpatterns = [
         "change/email/<code>/",
         ChangeEmailActivateView.as_view(),
         name="change_email_activation",
+
+      #hola
+
     ),
 ]

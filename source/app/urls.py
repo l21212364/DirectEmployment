@@ -5,6 +5,7 @@ from django.urls import include, path
 from main.views import ChangeLanguageView, IndexPageView, views
 
 urlpatterns = [
+    path("", IndexPageView.as_view(), name="root"),
     path("admin/", admin.site.urls),
     path("catalog/", IndexPageView.as_view(), name="index"),
     path("i18n/", include("django.conf.urls.i18n")),

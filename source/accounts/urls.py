@@ -50,7 +50,7 @@ urlpatterns = [
         ChangeEmailActivateView.as_view(),
         name="change_email_activation",
 
-     
+     #hola
 
     ),
 ]

@@ -110,8 +110,6 @@ USE_I18N = True
 LANGUAGE_CODE = "en"
 LANGUAGES = [
     ("en", _("English")),
-    ("zh-Hans", _("Simplified Chinese")),
-    ("fr", _("French")),
     ("es", _("Spanish")),
 ]
 

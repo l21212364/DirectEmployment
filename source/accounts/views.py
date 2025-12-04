@@ -114,6 +114,11 @@ class LogInView(GuestOnlyView, FormView):
 
         return redirect(settings.LOGIN_REDIRECT_URL)
 
+class perfilview(GuestOnlyView, FormView):
+    template_name = "accounts/perfil.html"
+    def perfile_view(request, id):
+        perfil = perfil.objects.get(id=id)
+        return render(request, "perfil.html", {"perfil": perfil})
 
 class SignUpView(GuestOnlyView, FormView):
     template_name = "accounts/sign_up.html"

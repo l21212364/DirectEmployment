@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Buscar Trabajadores</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #eef2f5;
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        background: linear-gradient(to right, #402E2A, #CF9D71);
+        padding: 15px;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .buscar-contenedor {
+        width: 60%;
+        margin: 30px auto;
+        background: white;
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+    .buscar-box {
+        width: 100%;
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    input[type="text"] {
+        width: 90%;
+        padding: 12px;
+        border-radius: 10px;
+        border: 1px solid #bbb;
+    }
+
+    button {
+        padding: 12px 20px;
+        border: none;
+        border-radius: 10px;
+        background: #CF9D71;
+        color: white;
+        cursor: pointer;
+    }
+
+    .resultado-card {
+        display: flex;
+        background: #f9f9f9;
+        border-radius: 18px;
+        padding: 15px;
+        margin-bottom: 15px;
+        border: 2px solid #d8d8d8;
+    }
+
+    .avatar {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border: 3px solid black;
+        margin-right: 20px;
+    }
+
+    .estado {
+        padding: 8px 15px;
+        border-radius: 10px;
+        color: white;
+        font-weight: bold;
+        float: right;
+    }
+
+    .disponible { background: #1AA057; }
+    .ocupado { background: #4D4D4D; }
+
+    .botones {
+        margin-top: 10px;
+    }
+
+    .botones button {
+        width: 120px;
+        margin-right: 10px;
+        border-radius: 12px;
+    }
+
+    .btn-ver { background: #0F4634; }
+    .btn-contactar { background: #CF9D71; }
+</style>
+</head>
+
+<body>
+
+<header>
+    <h2>Direc Employment</h2>
+</header>
+
+<div class="buscar-contenedor">
+
+    <form method="GET" class="buscar-box">
+        <input type="text" name="q" placeholder="Buscar trabajador, habilidad, profesión..." value="{{ query }}">
+        <button type="submit">Buscar</button>
+    </form>
+
+    {% if resultados %}
+        {% for t in resultados %}
+        <div class="resultado-card">
+
+            <img src="https://cdn-icons-png.flaticon.com/512/64/64572.png" class="avatar">
+
+            <div style="width:100%;">
+                <h3>{{ t.nombre }} {{ t.apellido_paterno }} {{ t.apellido_materno }}</h3>
+
+                {% if t.titulo_profesional %}
+                <b>{{ t.titulo_profesional }}</b><br>
+                {% endif %}
+
+                {% if t.ciudad %}
+                <b>Ubicación:</b> {{ t.ciudad.nombre_ciudad }}, {{ t.ciudad.estado.nombre_estado }} <br>
+                {% endif %}
+
+                <b>Rating:</b> {{ t.rating|default:"Sin calificar" }}
+
+                <div class="estado {% if t.disponibilidad == 'Disponible' %}disponible{% else %}ocupado{% endif %}">
+                    {{ t.disponibilidad|default:"No especificado" }}
+                </div>
+
+                {% if t.acerca_de_mi %}
+                <p><b>Acerca de mí</b><br>{{ t.acerca_de_mi }}</p>
+                {% endif %}
+
+                <div class="botones">
+                    <button class="btn-contactar">Contactar</button>
+                    <button class="btn-ver">Ver perfil</button>
+                </div>
+
+            </div>
+
+        </div>
+        {% endfor %}
+    {% else %}
+
+        {% if query %}
+            <p>No se encontraron resultados para "{{ query }}".</p>
+        {% endif %}
+
+    {% endif %}
+
+</div>
+
+</body>
+</html>

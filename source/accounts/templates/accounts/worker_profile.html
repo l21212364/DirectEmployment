@@ -1,0 +1,51 @@
+{% extends 'layouts/default/page.html' %}
+{% load bootstrap4 i18n %}
+
+{% block content %}
+
+<h2>{% translate 'Worker Profile' %}</h2>
+
+<h3>Account Information</h3>
+<p><strong>Username:</strong> {{ user.username }}</p>
+<p><strong>Email:</strong> {{ user.correo }}</p>
+<p><strong>Account Type:</strong> {{ user.tipo_usuario.tipousuario }}</p>
+
+<hr>
+
+<h3>Worker Information</h3>
+
+<p><strong>Name:</strong> {{ trabajador.nombre }} {{ trabajador.apellido_paterno }} {{ trabajador.apellido_materno }}</p>
+<p><strong>Professional Title:</strong> {{ trabajador.titulo_profesional }}</p>
+<p><strong>About Me:</strong> {{ trabajador.acerca_de_mi }}</p>
+<p><strong>Phone:</strong> {{ trabajador.telefono }}</p>
+<p><strong>Availability:</strong> {{ trabajador.disponibilidad }}</p>
+
+{% if trabajador.ciudad %}
+    <p><strong>City:</strong> {{ trabajador.ciudad.nombre_ciudad }}</p>
+    <p><strong>State:</strong> {{ trabajador.ciudad.estado.nombre_estado }}</p>
+{% endif %}
+
+{% if trabajador.rating %}
+    <p><strong>Rating:</strong> {{ trabajador.rating }} / 5</p>
+{% endif %}
+
+<h4>Skills</h4>
+<ul>
+{% for skill in trabajador.trabajadorhabilidad_set.all %}
+    <li>{{ skill.habilidad.nombre_habilidad }}</li>
+{% empty %}
+    <p>No skills added yet.</p>
+{% endfor %}
+</ul>
+
+<hr>
+
+<h3>Account Options</h3>
+<ul>
+    <li><a href="{% url 'accounts:change_profile' %}">{% translate 'Change Profile' %}</a></li>
+    <li><a href="{% url 'accounts:change_email' %}">{% translate 'Change email' %}</a></li>
+    <li><a href="{% url 'accounts:change_password' %}">{% translate 'Change password' %}</a></li>
+    <li><a href="{% url 'accounts:log_out_confirm' %}">{% translate 'log out' %}</a></li>
+</ul>
+
+{% endblock %}

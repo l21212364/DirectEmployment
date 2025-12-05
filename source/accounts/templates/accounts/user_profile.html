@@ -1,0 +1,24 @@
+{% extends 'layouts/default/page.html' %}
+{% load bootstrap4 i18n %}
+
+{% block content %}
+
+<h2>{% translate 'My Profile' %}</h2>
+<h3>User Information</h3>
+
+<p><strong>Username:</strong> {{ user.username }}</p>
+<p><strong>Email:</strong> {{ user.correo }}</p>
+<p><strong>Registration Date:</strong> {{ user.fecha_registro }}</p>
+<p><strong>Account Type:</strong> {{ user.tipo_usuario.tipousuario }}</p>
+
+<hr>
+
+<h3>Account Options</h3>
+<ul>
+    <li><a href="{% url 'accounts:change_profile' %}">{% translate 'Change Profile' %}</a></li>
+    <li><a href="{% url 'accounts:change_email' %}">{% translate 'Change email' %}</a></li>
+    <li><a href="{% url 'accounts:change_password' %}">{% translate 'Change password' %}</a></li>
+    <li><a href="{% url 'accounts:log_out_confirm' %}">{% translate 'log out' %}</a></li>
+</ul>
+
+{% endblock %}

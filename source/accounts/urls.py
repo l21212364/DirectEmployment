@@ -52,4 +52,5 @@ urlpatterns = [
 
      
     ),
+    path("perfil/", PerfilView.as_view(), name="perfil"),
 ]

@@ -15,6 +15,7 @@ from .views import (
     RestorePasswordDoneView,
     RestorePasswordView,
     SignUpView,
+    PerfilView,
 )
 
 app_name = "accounts"

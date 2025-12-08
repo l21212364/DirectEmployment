@@ -1,18 +1,105 @@
-{% extends 'layouts/default/page.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Direc Employment - Perfil</title>
+    <link rel="stylesheet" href="{% static 'css/styles2.css' %}">
+</head>
+<body>
 
-{% load bootstrap4 i18n %}
+<header class="topbar">
+    <div class="logo">
+        <img src="{% static 'img/logo.png' %}" alt="">
+        <span>Direc Employment</span>
+    </div>
 
-{% block content %}
+    <button class="back-btn"></button>
 
-    <h4>{% translate 'Change profile' %}</h4>
+    <div class="filters">Filtros Avanzados </div>
 
-    <form method="post">
+    <input class="search-box" type="text" placeholder="Ingeniero en .....">
+    
+    <button class="icon-btn"></button>
+    <button class="post-btn">Postulacion</button>
+    <button class="icon-btn"></button>
+    <button class="icon-btn"></button>
+</header>
 
-        {% csrf_token %}
-        {% bootstrap_form form %}
+<div class="container">
+    <aside class="sidebar">
+        <button class="side-item active"> Informacion personal</button>
+        <button class="side-item"> Experiencia laboral</button>
+        <button class="side-item"> Habilidades</button>
+        <button class="side-item"> Informacion personal</button>
+    </aside>
 
-        <button class="btn btn-success">{% translate 'Change' %}</button>
+    <main class="main-content">
+        <div class="profile-photo-area">
+            <div class="photo-circle"></div>
 
-    </form>
+            <div class="photo-buttons">
+                <button class="delete-btn">Eliminar foto</button>
+                <button class="change-btn">Cambiar foto</button>
+            </div>
+        </div>
 
-{% endblock content %}
+        <form class="form-card">
+            <div class="row">
+                <div class="field">
+                    <label>Nombre</label>
+                    <input type="text">
+                </div>
+
+                <div class="field">
+                    <label>Ciudad</label>
+                    <input type="text">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="field">
+                    <label>Apellido paterno</label>
+                    <input type="text">
+                </div>
+
+                <div class="field">
+                    <label>Estado</label>
+                    <input type="text">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="field">
+                    <label>Apellido materno</label>
+                    <input type="text">
+                </div>
+
+                <div class="field">
+                    <label>Correo</label>
+                    <input type="email">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="field">
+                    <label>Telefono</label>
+                    <input type="text">
+                </div>
+
+                <div class="field btn-space">
+                    <button class="save-btn">Guardar cambios</button>
+                </div>
+            </div>
+        </form>
+
+        <div class="about-box">
+            <h4>Acerca de mi</h4>
+            <textarea></textarea>
+        </div>
+    </main>
+</div>
+
+</body>
+</html>

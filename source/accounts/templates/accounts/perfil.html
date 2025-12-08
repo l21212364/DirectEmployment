@@ -1,3 +1,7 @@
+{% extends 'layouts/default/page.html' %}
+{% load bootstrap4 i18n %}
+
+{% block content %}
 <!DOCTYPE html>
 <html lang="{{ language_code }}">
 <head>
@@ -75,7 +79,7 @@
 
     <!-- COLUMNA IZQUIERDA -->
     <div class="lado-izquierdo">
-        <img class="perfil-img" src="https://via.placeholder.com/120" alt="foto">
+        <img class="perfil-img" src="https://i.pinimg.com/originals/83/bc/8b/83bc8b88cf6bc4b4e04d153a418cde62.jpg" alt="foto">
 
         <h3>{{ perfil.nombre }}</h3>
         <p>{{ perfil.profesion }}</p>
@@ -83,7 +87,8 @@
 
         <hr>
 
-        <p><strong>Email:</strong> {{ perfil.email }}</p>
+        <p><strong>Nombre:</strong> {{ request.user.first_name }} {{request.user.last_name }}</p>
+        <p><strong>Email:</strong> {{ request.user.email }}</p>
         <p><strong>Teléfono:</strong> {{ perfil.telefono }}</p>
 
         <h4>Habilidades clave</h4>
@@ -112,3 +117,4 @@
 
 </body>
 </html>
+{% endblock %}

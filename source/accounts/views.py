@@ -392,3 +392,6 @@ class LogOutConfirmView(LoginRequiredMixin, TemplateView):
 
 class LogOutView(BaseLogoutView):
     template_name = "accounts/log_out.html"
+
+class PerfilView(TemplateView):
+    template_name = "accounts/perfil.html"
